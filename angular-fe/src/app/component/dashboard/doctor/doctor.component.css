@@ -1,0 +1,8 @@
+.add-doc{
+    color: cornflowerblue;
+}
+
+.add-doc :hover {
+    transform: scale(1.06);
+
+}
