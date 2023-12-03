@@ -1,0 +1,7 @@
+.add-admin{
+    color: cornflowerblue;
+}
+
+.add-admin :hover {
+    transform: scale(1.06);
+}

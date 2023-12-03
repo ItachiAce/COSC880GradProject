@@ -9,11 +9,26 @@ import { HttpService } from '../../../../app/services/http.service';
   styleUrls: ['./doctor.component.css']
 })
 export class DoctorComponent {
+  doctors: any[] = [];
   constructor(
     public dialog: MatDialog,
     private httpService: HttpService
   ) { }
 
+  ngOnInit() {
+    this.getDoctorList();
+  }
+
+  getDoctorList() {
+    this.httpService.getDoctors().subscribe(
+      (data: any) => {
+        this.doctors = data; // Assuming the response is an array of doctors
+      },
+      error => {
+        console.error('Error getting doctor list from the database:', error);
+      }
+    );
+  }
 
 
   addDoctor() {

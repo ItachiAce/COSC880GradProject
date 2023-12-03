@@ -24,8 +24,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpService } from './services/http.service';
+import { AddPatientComponent } from './component/dashboard/patient/add-patient/add-patient.component';
 import { AddAdminComponent } from './component/dashboard/admin/add-admin/add-admin.component';
-import { LoginComponent } from './component/dashboard/login/login.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -35,8 +39,11 @@ import { LoginComponent } from './component/dashboard/login/login.component';
     SidebarComponent,
     AdminComponent,
     AddDoctorComponent,
+    AddPatientComponent,
     AddAdminComponent,
-    LoginComponent,
+   
+  
+   
 
         
   ],

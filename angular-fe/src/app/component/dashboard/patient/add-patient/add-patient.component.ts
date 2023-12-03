@@ -1,13 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-add-admin',
-  templateUrl: './add-admin.component.html',
-  styleUrls: ['./add-admin.component.css']
+  selector: 'app-add-patient',
+  templateUrl: './add-patient.component.html',
+  styleUrls: ['./add-patient.component.css']
 })
-export class AddAdminComponent {
+export class AddPatientComponent {
   cancelMessage: string = '';
   completionMessage: string = '';
 
@@ -21,16 +23,19 @@ export class AddAdminComponent {
 
   form!: FormGroup;
   title!: string;
-  first_name!: string;
-  last_name!: string;
+  firstName!: string;
+  lastName!: string;
+  address!: string;
   email!: string;
   username!: string;
   password!: string;
+  birthdate!: string;
+  
 
   constructor(
     private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) data: any,
-    private dialogRef: MatDialogRef<AddAdminComponent>
+    private dialogRef: MatDialogRef<AddPatientComponent>
   ) {
     this.title = data.title;
   }
@@ -38,11 +43,13 @@ export class AddAdminComponent {
   ngOnInit(): void {
     this.form = this.fb.group({
       id: ['', []],
-      first_name: ['', [Validators.required]],
-      last_name: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      address: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]]     
+      password: ['', [Validators.required]],
+      birthdate: ['', [Validators.required]]
     });
   }
 
@@ -50,7 +57,7 @@ export class AddAdminComponent {
     this.dialogRef.close();
   }
 
-  registerAdmin() {
+  registerPatient() {
     if (this.form.valid) {
       this.dialogRef.close(this.form.value);
     }

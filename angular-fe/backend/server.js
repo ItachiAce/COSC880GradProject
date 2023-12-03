@@ -100,7 +100,7 @@ app.post('/api/admin', async (req, res) => {
     }
   });
 // API endpoint for getting patient
-app.get('/api/patient', async (req, res) => {
+app.get('/api/patients', async (req, res) => {
     try {
         const result = await pool.query('SELECT * FROM new_patient');
         res.json(result.rows);
@@ -110,7 +110,7 @@ app.get('/api/patient', async (req, res) => {
     }
 });
 // API endpoint for adding a patient 
-app.post('/api/patient', async (req, res) => {
+app.post('/api/patients', async (req, res) => {
     try {
       const patient = req.body;
       const queryString = 'INSERT INTO new_patient (first_name, last_name, address, email, username, password, birthdate) VALUES ($1, $2, $3, $4, $5, $6, $7)';
@@ -172,19 +172,7 @@ app.post('/api/auth/login', async (req, res) => {
     }
   });
 
-  // User Registration
-app.post('/api/auth/register', async (req, res) => {
-    // Implement user registration logic here
-    // Register users (admin, doctor, patient)
-  });
-
-  // Admin User Addition
-app.post('/api/admin/add-user', async (req, res) => {
-    // Implement admin user addition logic here
-    // Add doctors and patients by admin
-  });
-
-  // Assign Doctor to Patient
+   // Assign Doctor to Patient
 app.post('/api/patient/assign-doctor', async (req, res) => {
     // Implement patient assigning doctor logic here
     // Allow patients to assign a doctor to themselves

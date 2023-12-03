@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',

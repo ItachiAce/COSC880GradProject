@@ -1,15 +1,37 @@
 <div class="container">
-
-    <div class="row">
-       <div class="col-sm-6 col-md-4 mt-3">
-         <mat-card class="add-doc text-center" (click) = "addDoctor()">
-            <mat-card-content>
-                Add Doctor <br>
-                <mat-icon>group_add</mat-icon>
-            </mat-card-content>
-         </mat-card>
-       </div>
-        
+  <div class="row">
+    <div class="col-md-4 mt-3" style="margin-bottom: 20px;">
+      <mat-card class="add-doc text-center" (click)="addDoctor()">
+        <mat-card-content>
+          Add Doctor <br>
+          <mat-icon>group_add</mat-icon>
+        </mat-card-content>
+      </mat-card>
     </div>
+  </div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doctor of doctors">
+            <td>{{ doctor.doctor_id }}</td>
+            <td>{{ doctor.first_name }}</td>
+            <td>{{ doctor.last_name }}</td>
+            <td>{{ doctor.address }}</td>
+            <td>{{ doctor.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

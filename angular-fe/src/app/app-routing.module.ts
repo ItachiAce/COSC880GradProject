@@ -5,6 +5,7 @@ import { DoctorComponent } from './component/dashboard/doctor/doctor.component';
 import { AdminComponent } from './component/dashboard/admin/admin.component';
 
 
+
 const routes: Routes = [
   {path : '', redirectTo : 'login', pathMatch : 'full'},
   {path : 'dashboard', children :
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path : 'patient', component: PatientComponent},
     {path : 'doctor', component: DoctorComponent},
     {path : 'admin', component: AdminComponent},
+    
     
   ]}
   

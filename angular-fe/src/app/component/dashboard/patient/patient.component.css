@@ -1,0 +1,8 @@
+.add-patient{
+    color: cornflowerblue;
+}
+
+.add-patient :hover {
+    transform: scale(1.06);
+
+}

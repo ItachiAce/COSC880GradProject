@@ -1,6 +1,6 @@
 import random
 import time
-# import psycopg2
+import psycopg2
 
 def generate_random_blood_pressure():
     return random.randint(80, 120), random.randint(50, 80)

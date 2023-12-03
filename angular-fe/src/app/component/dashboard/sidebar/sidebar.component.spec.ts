@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { RouterModule, Routes } from '@angular/router';
 import { SidebarComponent } from './sidebar.component';
 
 describe('SidebarComponent', () => {
